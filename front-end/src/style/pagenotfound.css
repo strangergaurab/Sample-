@@ -1,0 +1,32 @@
+  body{
+    background-color: rgb(249,250,224) ;
+}
+.task img{
+    width:170px;
+    height:60px;
+    position:relative;
+    top:90px;
+    left:50px;
+}
+.task p {
+     position:relative;
+    top:90px;
+    left:50px;
+}
+ .HH{
+    position: absolute;
+    left:50px;
+    border-radius: 8px;
+    padding:10px;
+    top:55%;
+ }
+ @media (max-width: 768px) {
+  .task {
+    font-size: 16px;
+  }
+  
+  .HH {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}

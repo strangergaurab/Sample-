@@ -1,0 +1,236 @@
+body {
+    margin-right: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+ }
+ 
+ .loginbox {
+    width: 320px;
+    height: 590px;
+    background-color: white;
+    outline: black;
+    border: 1px solid #C3C2C2;
+    border-radius: 10px;
+    color: #fff;
+    top: 53vh;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 50px 30px;
+    opacity: 0.9;
+ }
+ 
+ .pic {
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    top: 2%;
+    margin-left: 10%;
+ 
+ }
+ 
+ #register_form {
+    margin-top: 50px;
+ }
+ 
+ .loginbox input {
+    width: 99%;
+    margin-bottom: 8px;
+    margin-left: 3%;
+ }
+ 
+ .loginbox input[type="email"],
+ input[type="password"],
+ input[type="text"] {
+    border: 1px solid #C3C2C2;
+    padding: 0px 10px 0px 10px;
+    background: transparent;
+    outline: none;
+    height: 35px;
+    font-size: 14px;
+    border-radius: 10px;
+ }
+ 
+ .loginbox input[type="submit"] {
+ 
+    border: none;
+    outline: none;
+    height: 32px;
+    background: #072f65;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 70%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 18%;
+    border-radius: 0.25em;
+    cursor: pointer;
+ 
+ }
+ 
+ .loginbox input[type="submit"]:hover {
+    opacity: 0.8;
+    cursor: pointer;
+ 
+ }
+ 
+ .loginbox a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: gray;
+     padding-bottom:3px;
+ }
+ 
+ .loginbox a:hover {
+    color: blue;
+ }
+ 
+ .acc {
+    position: relative;
+    top: 16px;
+    left: 28px;
+    font-weight: bold;
+    color: #000;
+    font-size: 11px;
+    margin-top: 0px;
+ }
+ 
+ #sign {
+    position: relative;
+    top: 16px;
+    left: 26px;
+    color: black;
+ }
+ 
+ .bhadaio {
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 30%;
+ }
+ 
+ #logo {
+    width: 150px;
+    height: 100px;
+    position: relative;
+    left: 36%;
+ }
+ .login-btn:hover 
+ {
+    transform: scale(1.1);
+ }
+ 
+ 
+ 
+ 
+ #des {
+    position: absolute;
+    left: 30%;
+    font-size: 18px;
+    font-family: sans-serif;
+ }
+ 
+ #header {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    /* making vertical centerign of all children */
+ }
+ 
+ #header::before,
+ #header::after {
+    content: '';
+    flex: 1 1 auto;
+    /* the first digint is 'flex-grow: 1', helps elemet to occupy all free space */
+    border-bottom: solid 1px rgb(102, 8, 8);
+ }
+ 
+ h3 {
+    flex: 0 1 auto;
+    /* the first digint is flex-grow: 0 */
+    padding: 0 15px 0 15px;
+    color: rgb(48, 0, 0);
+ }
+ .sign{
+    margin-left:20px;
+ }
+ /* Styling for mobile devices */
+
+@media only screen and (max-width: 768px) {
+   .loginbox {
+     width: 80%;
+     height: auto;
+     padding: 30px 20px;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+   }
+ 
+   .pic {
+     width: 120px;
+     height: 50px;
+     margin-left: 5%;
+   }
+ 
+   #logo {
+     width: 120px;
+     height: 80px;
+     left: 35%;
+   }
+ 
+   #des {
+     font-size: 16px;
+     left: 20%;
+   }
+ 
+   #header {
+     flex-wrap: wrap;
+     justify-content: center;
+   }
+ 
+   #header::before,
+   #header::after {
+     border: none;
+   }
+ 
+   h3 {
+     text-align: center;
+     margin: 10px 0;
+   }
+ 
+   .loginbox input[type="submit"] {
+     width: 100%;
+     margin-left: 0;
+     margin-top: 20px;
+   }
+ 
+   .loginbox a {
+     display: block;
+     text-align: center;
+   }
+ 
+   .loginbox .acc {
+     margin-left: 0;
+     text-align: center;
+   }
+ 
+   .loginbox .sign {
+     margin-left: 0;
+     margin-top: 10px;
+     text-align: center;
+   }
+ }
+ .form-error {
+   font-size:0.7rem;
+   color: #b22b27;
+   margin:0px;
+   padding:0px;
+ }

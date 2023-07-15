@@ -1,0 +1,19 @@
+.EMI{
+    width:95%;
+    padding:0 15px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    font-family:Poppins;
+    text-align: center;
+}
+.title{
+    font-weight: 700;
+}
+.slider{
+    width:100%;
+}
+.lables{
+    display: flex;
+    justify-content: space-around;
+}

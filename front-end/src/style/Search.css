@@ -1,0 +1,28 @@
+body{
+  margin:15px;
+}
+
+div.polaroid {
+  width: 300px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  background-color: blue;
+  border-radius:5px;
+  border:1px solid #05ffb0;
+}
+div.polaroid:hover{
+  transform: translate(0px,-10px);
+  transition-timing-function: ease;
+  transition-duration:0.2s;
+  box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 15px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.sub {
+  padding: 10px;
+  background-color: blue;
+  border-radius: 5px;
+}
+img {
+  width: 100%;
+  border-radius:5px;
+  cursor: pointer;
+}
