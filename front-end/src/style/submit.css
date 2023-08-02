@@ -1,0 +1,144 @@
+/* SubmitProperty.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Form container */
+  .full-row {
+    padding: 40px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form title */
+  .text-secondary.double-down-line.text-center {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+  }
+  
+  /* Form section headings */
+  .text-secondary {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  
+  /* Form input fields */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px #4CAF50;
+  }
+  
+  /* Select dropdown */
+  select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9l6 6 6-6' stroke='%23444' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px 12px;
+  }
+  
+  /* Textarea */
+  textarea.form-control {
+    resize: vertical;
+  }
+  
+  /* File input */
+  input[type="file"].form-control {
+    display: none;
+  }
+  
+  .file-upload-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* File input styling */
+  .file-upload-label:hover {
+    background-color: #45a049;
+  }
+  
+  /* File input display filename */
+  .file-upload-label::after {
+    content: "Upload";
+  }
+  
+  .file-upload-input::before {
+    content: attr(data-text);
+    display: inline-block;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  /* Submit button */
+  input[type="submit"].btn-info {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  input[type="submit"].btn-info:hover {
+    background-color: #45a049;
+  }
+  
+  /* Media queries */
+  @media (max-width: 768px) {
+    /* Mobile view adjustments */
+    .full-row {
+      padding: 20px;
+    }
+  
+    .text-secondary.double-down-line.text-center {
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+  
+    .text-secondary {
+      font-size: 18px;
+    }
+  
+    .form-control {
+      font-size: 14px;
+    }
+  
+    /* Adjustments for smaller screens */
+    /* Add more styles as needed */
+  }
+  

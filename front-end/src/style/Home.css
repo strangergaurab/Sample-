@@ -1,159 +1,257 @@
-
-*{
-    margin:0px;
-    padding:0px;
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-
-
-.hero-wrapper {
-    color:white;
+  }
+  
+  /* Global styles for the hero section */
+  .hero-wrapper {
+    color: white;
     position: relative;
     padding-bottom: 2rem;
-    background:rgba(0, 0, 0, 0.99);
-     margin:0px;
-     padding:0px;
-     padding-left:20px;
-}
-
- /* left side */
- .hero-left{
-    gap:3rem;
-
- }
- .hero-title{
-    position:absolute;
+    background: rgb(171,219,227);
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+  }
+  
+  .hero-left {
+    gap: 3rem;
+  }
+  
+  .hero-title {
+    position: absolute;
     z-index: 1;
     bottom: 30%;
- }
-.hero-title>h1{
+  }
+  
+  .hero-title > h1 {
     font-weight: 600;
-    font-size:3.8rem;
+    font-size: 3.8rem;
     line-height: 4rem;
-
-}
-.orange-circle{
+  }
+  
+  .orange-circle {
     height: 4rem;
-    width:4rem;
-    background:orange;
-    border-radius:999px;
+    width: 4rem;
+    background: orange;
+    border-radius: 999px;
     position: absolute;
-    right:28%;
-    top:-10%;
-    z-index:-1;
-}
-
-.hero-container{
+    right: 28%;
+    top: -10%;
+    z-index: -1;
+  }
+  
+  .hero-container {
     justify-content: space-between;
     align-items: flex-end;
-     
-}
-
-/* right side */
-.image-container{
-    width:30rem;
+  }
+  
+  /* Styles for the right side (image container) */
+  .image-container {
+    width: 30rem;
     height: 35rem;
     overflow: hidden;
-    border-radius:15rem 15rem 0 0;
-     border: 8px solid rgba(255, 255, 255, 0.12); 
-     margin-right:60px;
-}
-
-.image-container>img{
+    border-radius: 15rem 15rem 0 0;
+    border: 8px solid rgba(255, 255, 255, 0.12);
+    margin-right: 60px;
+  }
+  
+  .image-container > img {
     width: 100%;
-    height:100%;
-}
-.search-bar{
+    height: 100%;
+  }
+  
+  /* Styles for the search bar (if applicable) */
+  .search-bar {
     background-color: white;
     border-radius: 5px;
     border: 3px solid rgba(120, 120, 120, 0.374);
-    padding:0.5rem 1rem;
+    padding: 0.5rem 1rem;
     justify-content: space-between;
-    width:100%;
-}
-.search-bar>input[type="text"]{
+    width: 100%;
+  }
+  
+  .search-bar > input[type="text"] {
     border: none;
-}
-    /* outline: none;
-    height: 32px;
-    background: #072f65;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 10px;
-    width: 50%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.25em;
-    cursor: pointer; */
-
-
-.stats{
-    width:100%;
+  }
+  
+  /* Styles for the stats section (if applicable) */
+  .stats {
+    width: 100%;
     justify-content: space-between;
-}
-.stat>:nth-child(1)
-{
-    font-size:2rem;
-    .stat>:nth-child(1)>:last-child{
-        color:orange;
-
-    }
-}
-
-.hero-container{
-    overflow: hidden;
-}
-
-
-.r-head{
-    margin-bottom:2rem;
-}
-
-.r-card{
-    gap:0.6rem;
-    padding:1rem;
-     border-radius: 10px;
-     max-width: max-content;
-     margin:auto;
-     transition: all 300ms ease-in;
-}
-.r-card>img{
-    width:80%;
-     max-width:15rem;
-}
-.r-card>:nth-child(2)
-{
-    font-size:1.2rem;
+  }
+  
+  .stat > :nth-child(1) {
+    font-size: 2rem;
+  }
+  
+  .stat > :nth-child(1) > :last-child {
+    color: orange;
+  }
+  
+  /* Styles for the rent room section */
+  .r-head {
+    margin-bottom: 2rem;
+  }
+  
+  .r-card {
+    gap: 0.6rem;
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: max-content;
+    margin: auto;
+    transition: all 300ms ease-in;
+  }
+  
+  .r-card > img {
+    width: 80%;
+    max-width: 15rem;
+  }
+  
+  .r-card > :nth-child(2) {
+    font-size: 1.2rem;
     font-weight: 600;
-}
-.r-card>:nth-child(3)
-{
-   font-size:1.5rem;   
-}
-.r-card>:nth-child(4)
-{
-    font-size:0.7rem;
-    width:15rem;
-}
-.r-card:hover{
-    scale:1.025;
+  }
+  
+  .r-card > :nth-child(3) {
+    font-size: 1.5rem;
+  }
+  
+  .r-card > :nth-child(4) {
+    font-size: 0.7rem;
+    width: 15rem;
+  }
+  
+  .r-card:hover {
+    transform: scale(1.025);
     cursor: pointer;
-    background: linear-gradient(
+    background-image: linear-gradient(
       100deg,
-      rgba(255,255,255,0) 0%,
-      rgba(136,160,255,0.46) 217.91%  
+      rgba(255, 255, 255, 0) 0%,
+      rgba(136, 160, 255, 0.46) 217.91%
     );
-    box-shadow: 0px 72px 49px -51px rgba(136,160,255,0.21);
-}
-
-.Swiper-horizontal{
+    box-shadow: 0px 72px 49px -51px rgba(136, 160, 255, 0.21);
+  }
+  
+  /* Adjustments for Swiper component (if needed) */
+  .Swiper-horizontal {
     overflow: visible;
-}
-.r-wrapper{
+  }
+  
+  /* Styles for the rent room section wrapper */
+  .r-wrapper {
     display: flex;
     flex-wrap: wrap;
-    flex-direction:row;
+    flex-direction: row;
+  }
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global styles for the hero section */
+  /* ... (No changes here) ... */
+  
+  /* Styles for the right side (image container) */
+  .image-container {
+    width: 30rem;
+    height: 35rem;
+    overflow: hidden;
+    border-radius: 15rem 15rem 0 0;
+    border: 8px solid rgba(255, 255, 255, 0.12);
+    margin-right: 60px;
+  }
+  
+  .image-container > img {
+    /* Adjust the height to maintain the aspect ratio */
+    height: 100%;
+    /* Set the image width to auto to maintain aspect ratio and fill the container */
+    width: auto;
+    /* Center the image horizontally */
+    margin: 0 auto;
+    /* Ensure the image is centered and covers the container without distortion */
+    object-fit: cover;
+  }
+  
+  /* ... (No changes to other styles) ... */
+/* Home.css */
+
+/* ... (Other existing styles) ... */
+
+/* Add a new class to style the container for rent room cards using CSS Grid */
+
+    .footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 35px;
+    transition: .3s;
 }
 
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+    border-color: var(--light);
+}
 
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .form-control {
+    border-color: rgba(255,255,255,0.5);
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+.happy{
+  width:100px;
+  height: 100px;
+}

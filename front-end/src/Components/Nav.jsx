@@ -19,6 +19,7 @@ function Nav() {
           <li><Link to="/Explore"><MdExplore /></Link></li>
           <li><Link to="/Foter"><GiHelp /></Link> </li>
            <li><Link to="/About">About</Link></li>
+           <li><Link to="/SubmitProperty">Submit</Link></li>
           <li><Link to="/Loginform"> <input type="submit" name="" value="Login" className="login_btn" /></Link></li>
 
           <li><Link to="/Signup"> <input type="submit" name="" value="Register" className="login_btn" /></Link></li>

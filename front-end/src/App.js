@@ -1,4 +1,5 @@
 import "./App.css";
+import 'swiper/swiper.min.css';
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
@@ -15,6 +16,7 @@ import Pagesnotfound from "./Components/Pagesnotfound";
 import Foter from "../src/Components/Foter.jsx";
  import ContactForm from "./Components/ContactForm";
  import About from "./Components/About.jsx";
+ import SubmitProperty from "./Components/SubmitProperty .jsx";
 // import Contact from './Components/Contact.jsx';
 function App() {
   return (
@@ -34,6 +36,7 @@ function App() {
             <Route path="/ForgotPassword" element={<ForgotPassword />} />
             <Route path="*" element={<Pagesnotfound />} />
             <Route path="/About" element={<About/>}/>
+            <Route path="/SubmitProperty" element={<SubmitProperty/>}/>
           </Routes>
         </BrowserRouter>
       </div>
