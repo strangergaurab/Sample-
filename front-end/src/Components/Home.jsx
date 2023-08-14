@@ -93,45 +93,45 @@ function Home() {
               <div className="d-flex pt-2">
                 <a
                   className="btn btn-outline-light btn-social"
-                  href="https://twitter.com/freewebsitecode"
+                  href="https://twitter.com/gaurab.com"
                 >
-                  <i class="fab fa-twitter"></i>
+                  <i className="fab fa-twitter"></i>
                 </a>
                 <a
                   className="btn btn-outline-light btn-social"
                   href="https://www.facebook.com/"
                 >
-                  <i class="fab fa-facebook-f"></i>
+                  <i className="fab fa-facebook-f"></i>
                 </a>
                 <a
                   className="btn btn-outline-light btn-social"
                   href="https://youtube.com/freewebsitecode"
                 >
-                  <i class="fab fa-youtube"></i>
+                  <i className="fab fa-youtube"></i>
                 </a>
                 <a
                   className="btn btn-outline-light btn-social"
                   href="https://www.linkedin.com/feed/"
                 >
-                  <i class="fab fa-linkedin-in"></i>
+                  <i className="fab fa-linkedin-in"></i>
                 </a>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
               <h5 className="text-white mb-4">Quick Links</h5>
-              <a className="btn btn-link text-white-50" href="">
+              <a className="btn btn-link text-white-50" href="#">
                 About Us
               </a>
-              <a className="btn btn-link text-white-50" href="">
+              <a className="btn btn-link text-white-50" href="#">
                 Contact Us
               </a>
-              <a className="btn btn-link text-white-50" href="">
+              <a className="btn btn-link text-white-50" href="#">
                 Our Services
               </a>
-              <a className="btn btn-link text-white-50" href="">
+              <a className="btn btn-link text-white-50" href="#">
                 Privacy Policy
               </a>
-              <a className="btn btn-link text-white-50" href="">
+              <a className="btn btn-link text-white-50" href="#">
                 Terms & Condition
               </a>
             </div>
@@ -142,42 +142,42 @@ function Home() {
                   <img
                     className="img-fluid rounded bg-light p-1"
                     src={image3}
-                    alt=""
+                    alt="image5"
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded bg-light p-1"
                     src={image}
-                    alt=""
+                    alt="image4"
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded bg-light p-1"
                     src={image1}
-                    alt=""
+                    alt="image1"
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded bg-light p-1"
                     src={image2}
-                    alt=""
+                    alt="image2"
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded bg-light p-1"
                     src={image3}
-                    alt=""
+                    alt="image3"
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid rounded bg-light p-1"
                     src={image3}
-                    alt=""
+                    alt="image3"
                   />
                 </div>
               </div>
@@ -209,20 +209,20 @@ function Home() {
             <div className="row">
               <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 &copy;{" "}
-                <a className="border-bottom" href="https://freewebsitecode.com">
+                <a className="border-bottom" href="www.gaurab.com.np">
                   <img src={logo} className="happy" />
                 </a>
                 , All Right Reserved. Designed By{" "}
-                <a className="border-bottom" href="https://freewebsitecode.com">
+                <a className="border-bottom" href="www.saurab.com.np">
                   Free Website Code
                 </a>
               </div>
               <div className="col-md-6 text-center text-md-end">
                 <div className="footer-menu">
-                  <a href="">Home</a>
-                  <a href="">Cookies</a>
-                  <a href="">Help</a>
-                  <a href="">FQAs</a>
+                  <a href="#">Home</a>
+                  <a href="#">Cookies</a>
+                  <a href="#">Help</a>
+                  <a href="#">FQAs</a>
                 </div>
               </div>
             </div>

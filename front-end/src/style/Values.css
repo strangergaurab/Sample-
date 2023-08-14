@@ -1,7 +1,4 @@
 
-
-
-
 .v-container .image-container {
     border: 8px solid rgba(232, 232, 232, 0.93);
   }
@@ -56,3 +53,78 @@
   .primaryText1{
     font-size:14px;
   }
+
+
+  /* Add smooth transition for the accordion animation */
+.accordionItem {
+  background: white;
+  border: 0.8px solid rgba(129, 128, 0, 0.143);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+/* Add a box shadow and reduced border radius to create a card-like effect when expanded */
+.accordionItem.expanded {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+/* Add a smooth background color transition for the accordion button */
+.accordionButton {
+  background-color: white;
+  padding: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Apply a hover effect to the accordion button */
+.accordionButton:hover {
+  background-color: #f5f5f5;
+}
+
+/* Adjust the icon size and color */
+.icon {
+  padding: 10px;
+  background: blue;
+  border-radius: 5px;
+  display: flex; /* Add display flex to center the icon vertically */
+  align-items: center; /* Center the icon vertically */
+  justify-content: center; /* Center the icon horizontally */
+}
+
+.icon svg {
+  fill: white; /* Change the icon color to white */
+  width: 20px; /* Adjust the icon size */
+  height: 20px; /* Adjust the icon size */
+}
+
+/* Adjust font size for better readability */
+.accordionButton .primaryText {
+  font-size: 16px; /* Increase the font size */
+  font-weight: bold; /* Add font weight for emphasis */
+}
+
+.primaryText1 {
+  font-size: 18px; /* Increase the font size */
+  font-weight: bold; /* Add font weight for emphasis */
+}
+
+/* Remove the default border and add a smooth border transition for the image container */
+.v-container .image-container {
+  border: 8px solid rgba(232, 232, 232, 0.93);
+  transition: border 0.2s ease;
+}
+
+/* Add a hover effect to the image container */
+.v-container .image-container:hover {
+  border-color: rgba(232, 232, 232, 0.6);
+}
+
+/* Add a gap between the right-side elements */
+.v-right {
+  gap: 1rem;
+}

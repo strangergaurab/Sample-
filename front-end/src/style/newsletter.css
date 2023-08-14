@@ -1,0 +1,72 @@
+/* Updated CSS for the advanced and attractive input box */
+.containerrs {
+    height: 100%;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.wrapperrs {
+    max-width: 500px; /* Adjust the max-width as needed */
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleess {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.titleess > h5 {
+    color: #777;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.titleess > h2 {
+    color: #333;
+    font-size: 28px;
+}
+
+.wrapperrs > .inputContainerr {
+    margin-top: 2.5rem;
+    border: 2px solid #007bff; /* Updated border color */
+    border-radius: 30px; /* Increased border radius for a more rounded look */
+    height: 60px; /* Increased height for better visibility */
+    width: 360px;
+    padding: 0.25rem 0.75rem; /* Adjusted padding for better alignment */
+    display: flex;
+    align-items: center;
+}
+
+.wrapperrs > .inputContainerr:focus-within {
+    border-color: #0056b3; /* Border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Added a subtle box shadow on focus */
+}
+
+.wrapperrs > .inputContainerr > input {
+    flex: 1; /* Allow the input to take all available space */
+    border: none;
+    outline: none;
+    padding-left: 0.5rem;
+    font-size: 16px; /* Adjusted font size for better readability */
+    background:transparent;
+}
+
+.wrapperrs > .inputContainerr > .sendIcon {
+    margin-right: 0.5rem;
+    font-size: 20px;
+    color: #007bff; /* Icon color to match the border color */
+    cursor: pointer;
+    background-color: white;
+    
+}
+
+/* Added a hover effect to the sendIcon */
+.wrapperrs > .inputContainerr > .sendIcon:hover {
+    color: #0056b3;
+}

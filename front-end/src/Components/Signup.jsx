@@ -4,127 +4,107 @@ import logo from "../Images/logo.png";
 import Loginform from "./Loginform";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
-import signUpSchema from './Schema.jsx';
+// import signUpSchema from './Schema.jsx';
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { request } from "../utils/fetchAPI";
+import { register } from '../redux/authSlice';
+import { useSelector } from 'react-redux';
+import {useState} from 'react';
 
 const Signup = () => {
-  const initialValues = {
-    first_name: "",
-    middle_name: "",
-    last_name: "",
-    user_name: "",
-    email: "",
-    password: "",
-    confirm_password: "",
-  };
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const [error, setError] = React.useState(false)
+  const [emptyFields, setEmptyFields] = React.useState(false)
+  const { token } = useSelector((state) => state.auth)
+  const [state, setState] = useState({})
 
-  const {
-    values,
-    handleBlur,
-    handleChange,
-    handleSubmit,
-    errors,
-    touched
-  } = useFormik({
-    initialValues,
-    validationSchema: signUpSchema,
-    validateOnChange: true,
-    validateOnBlur: false,
-    onSubmit: (values, action) => {
-      console.log("🚀 ~ file: App.jsx ~ line 17 ~ App ~ values", values);
-      action.resetForm();
-    },
-  });
+  const handleState = (e) => {
+        setState((prev) => {
+          return { ...prev, [e.target.name]: e.target.value }
+        })
+      }
 
-  return (
+  const handleSubmit =async (e) => {  
+    e.preventDefault()
+    if (Object.values(state).some((v) => v === '')) {
+      setEmptyFields(true)
+      setTimeout(() => {
+        setEmptyFields(false)
+      }, 2500)
+    }
+      try {
+        const headers = {
+          "Content-Type": "application/json",
+          'Access-Control-Request-Headers':'*'
+        };
+        const res = await request(`/auth/register`, "POST", headers,{ ...state});
+        console.log(res);
+        dispatch(register(res))
+        navigate("/Loginform");
+      } catch(error) {
+        setError(true)
+        setTimeout(() => {
+          setError(false)
+        }, 2000)
+        console.error(error)
+      }
+    }
+    return (
     <>
       <div className="loginbox">
         <img src={logo} className="pic" alt="" />
         <form action="" id="register_form" onSubmit={handleSubmit}>
           <input
             type="text"
-            autoComplete="off"
             placeholder="First name"
             name="first_name"
-            value={values.first_name}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            onChange={handleState}
+            
           />
-          {touched.first_name && errors.first_name && (
-            <p className="form-error">{errors.first_name}</p>
-          )}
-          <input
+         <input
             type="text"
-            autoComplete="off"
             placeholder="Middle name"
             name="middle_name"
-            value={values.middle_name}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            onChange={handleState}
           />
-          {touched.middle_name && errors.middle_name && (
-            <p className="form-error">{errors.middle_name}</p>
-          )}
+        
           <input
             type="text"
-            autoComplete="off"
             placeholder="Last name"
             name="last_name"
-            value={values.last_name}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            onChange={handleState}
           />
-          {touched.last_name && errors.last_name && (
-            <p className="form-error">{errors.last_name}</p>
-          )}
+        
           <input
             type="text"
-            autoComplete="off"
             placeholder="User name"
             name="user_name"
-            value={values.user_name}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            onChange={handleState}
+            
           />
-          {touched.user_name && errors.user_name && (
-            <p className="form-error">{errors.user_name}</p>
-          )}
+        
           <input
             type="email"
-            autoComplete="off"
             placeholder="E-mail"
             name="email"
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            onChange={handleState}
+          
           />
-          {touched.email && errors.email && (
-            <p className="form-error">{errors.email}</p>
-          )}
+        
           <input
             type="password"
-            autoComplete="off"
             placeholder="Password"
             name="password"
-            value={values.password}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            onChange={handleState}
           />
-          {touched.password && errors.password && (
-            <p className="form-error">{errors.password}</p>
-          )}
           <input
             type="password"
-            autoComplete="off"
             placeholder="Confirm password"
-            id="confirm_password"
             name="confirm_password"
-            value={values.confirm_password}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            onChange={handleState}
           />
-          {touched.confirm_password && errors.confirm_password && (
-            <p className="form-error">{errors.confirm_password}</p>
-          )}
           <input type="submit" name="" value="Register" className="login-btn" />
           <div className="header"></div>
           <div id="header"></div>
@@ -132,6 +112,16 @@ const Signup = () => {
             Already have an account ?
           </Link>
         </form>
+        {error && (
+          <div className="error">
+            There was an error signing up! Try again.
+          </div>
+        )}
+        {emptyFields && (
+          <div className="error">
+            Fill all fields!
+          </div>
+        )}
       </div>
     </>
   );

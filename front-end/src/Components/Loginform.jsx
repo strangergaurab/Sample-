@@ -1,81 +1,76 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import React from 'react';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import '../style/Login.css';
-import Signup from './Signup';
-import ForgotPassword from './ForgottenPassword';
 import logo from '../Images/logo.png';
+import { request } from '../utils/fetchAPI';
+import { useDispatch } from 'react-redux';
+import { login } from '../redux/authSlice';
 
 const Loginform = () => {
-  const initialValues = {
-    email: '',
-    password: '',
-  };
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState(false)
+  const [emptyFields, setEmptyFields] = useState(false)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  
 
-  const validationSchema = Yup.object().shape({
-    email: Yup.string().email('Email is invalid').required('Email is required'),
-    password: Yup.string().min(6, 'Password must be at least 6 characters long').required('Password is required'),
-  });
+  const handleSubmit = async (e) => {
+    e.preventDefault()
 
-  const {
-    values,
-    handleBlur,
-    handleChange,
-    handleSubmit,
-    errors,
-    touched
-  } = useFormik({
-    initialValues,
-    validationSchema,
-    validateOnChange: true,
-    validateOnBlur: false,
-    onSubmit: (values, action) => {
-      // TODO: submit form data to server
-      action.resetForm();
-    },
-  });
+    if(email === '' || password === ''){
+       setEmptyFields(true)
+       setTimeout(() => {
+        setEmptyFields(false)
+       }, 2500)
+    }
 
+    try {
+      const options = {
+        "Content-Type": "application/json",
+      }
+
+      const data = await request('/auth/login', "POST", options, { email, password })
+
+      dispatch(login(data))
+      navigate("/SubmitProperty")
+    } catch (error) {
+      setError(true)
+      setTimeout(() => {
+        setError(false)
+      }, 2000)
+      console.error(error)
+    }
+  }
+
+ 
   return (
     <div className="Loginbox">
       <img src={logo} className="pic" alt="" />
       <form action="" id="register_form" onSubmit={handleSubmit}>
         <input
           type="email"
-          autoComplete="off"
           placeholder="Username and email"
           name="email"
-          value={values.email}
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />
-        {touched.email && errors.email && (
-          <p className="form-error">{errors.email}</p>
-        )}
-
+          onChange={(e) => setEmail(e.target.value)} 
+        /> 
         <input
           type="password"
-          autoComplete="off"
           placeholder="Password"
           name="password"
-          value={values.password}
-          onChange={handleChange}
-          onBlur={handleBlur}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        {touched.password && errors.password && (
-          <p className="form-error">{errors.password}</p>
-        )}
 
-        <Link to="/ForgotPassword" element={<ForgotPassword />}>
-          Forgot password?
-        </Link>
-        <input type="submit" name="" value="Register" className="login-btn" />
+        <Link to="/ForgotPassword">Forgot password?</Link>
+        <input type="submit" name="" value="Login" className="login-btn" />
         <div id="header"></div>
-        <Link to="/Signup" element={<Signup />}>
-          Signup
-        </Link>
+        <Link to="/Signup">Signup</Link>
       </form>
-  </div>
-  )
-        };
+      {emptyFields && <p className="error-message">Please fill in all fields.</p>}
+      {error && <p className="error-message">An error occurred. Please try again later.</p>}
+    </div>
+  );
+};
+
 export default Loginform;

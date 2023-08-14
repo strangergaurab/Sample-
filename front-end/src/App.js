@@ -9,34 +9,94 @@ import Signup from "./Components/Signup";
 import ForgotPassword from "./Components/ForgottenPassword.jsx";
 // import Help from './Components/Help.jsx';
 import Explore from "./Components/Explore.jsx";
-import Search from "./Components/Search.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import Pagesnotfound from "./Components/Pagesnotfound";
-import Foter from "../src/Components/Foter.jsx";
  import ContactForm from "./Components/ContactForm";
  import About from "./Components/About.jsx";
- import SubmitProperty from "./Components/SubmitProperty .jsx";
 // import Contact from './Components/Contact.jsx';
+import Footer from "./Components/Foter.jsx";
+import Properties from "./Components/Properties.jsx";
+import PopularProperties from "./Components/popularProperties.jsx";
+import FeaturedProperties from "./Components/FeaturedProperties.jsx";
+import Newsletter from './Components/Newsletter.jsx';
+import SubmitProperty from './Components/SubmitProperty.jsx'
+import PropertyDetail from "./Components/PropertyDetail.jsx";
 function App() {
   return (
     <>
       <div className="App">
         <BrowserRouter>
-          <Nav />
           <Routes>
-            <Route path="/" element={<Nav />} />
-            <Route path="/Home" element={<Home />} />
+            <Route path="/Home" element={
+             <>
+            <Nav />
+            <Home />
+            </>
+            } />
+
             {/* <Route path="/ContactForm" element={<ContactForm />} /> */}
-            <Route path="/ContactForm" element={<ContactForm/>}/>   
-            <Route path="/Explore" element={<Explore />} />
-            <Route path="/Foter" element={<Foter />} />
-            <Route path="/Loginform" element={<Loginform />} />
-            <Route path="/Signup" element={<Signup />} />
+            <Route path="/ContactForm" element={
+            <ContactForm/>}/>  
+             <Route path="/Search" element={
+              <>
+              <Nav />
+               <PopularProperties/>
+                <Properties/>
+             <FeaturedProperties/>
+                <Newsletter/> 
+                  <Footer/>
+              </>
+             } />
+            <Route path="/Explore" element={
+            <>
+            <Nav />
+            <Explore />
+             <Footer/>
+            </>
+          } />
+            <Route path="/Loginform" element={
+             <>
+             <Nav/>
+            <Loginform />
+            </>
+            } />
+            <Route path="/Signup" element={
+             <>
+             <Nav/>
+            <Signup /> 
+            </>
+            } />
             <Route path="/ForgotPassword" element={<ForgotPassword />} />
-            <Route path="*" element={<Pagesnotfound />} />
-            <Route path="/About" element={<About/>}/>
+            <Route path="*" element={
+            <>
+           <Nav/>
+           <Pagesnotfound />
+           <Footer/>
+           </>
+            } />
+            <Route path="/About" element={
+            <>
+            <Nav/>
+            <About/>
+             <Footer/>
+            </>
+}/>
             <Route path="/SubmitProperty" element={<SubmitProperty/>}/>
+             <Route path="/properties" element={
+                 <>
+               <Nav />
+                <Properties/>
+                 <Footer/>
+               </>
+             } />   
+         <Route path='/propertyDetail/:id' element={
+          <>
+            <Nav />
+            <PropertyDetail />
+            <Footer />
+          </>
+        } />      
           </Routes>
         </BrowserRouter>
       </div>

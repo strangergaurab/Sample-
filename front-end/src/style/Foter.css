@@ -5,3 +5,34 @@
     top:90px;
     left:20px;
 }
+
+/* Apply a flexbox layout to the navbar */
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    background-color:black;
+    color:black;
+    padding: 10px;
+  }
+  
+  /* Style for each navbar item (button) */
+  .btn btn-link {
+    padding: 8px 16px;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  /* Add some space between navbar items */
+  .btn btn-link + .btn btn-link {
+    margin-left: 10px;
+  }
+  
+  /* Style when hovering over navbar items */
+  .btn btn-link:hover {
+    background-color: #ddd;
+  }
+  
