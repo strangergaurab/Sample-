@@ -73,11 +73,11 @@ const PopularProperties = () => {
           </select>
           <select onChange={(e) => setPriceRange(e.target.value)}>
             <option disabled>Select Price Range</option>
-            <option value="0">0-100,000</option>
-            <option value="1">100,000-200,000</option>
-            <option value="2">200,000-300,000</option>
-            <option value="3">300,000-400,000</option>
-            <option value="4">400,000-500,000</option>
+            <option value="0">0-2000</option>
+            <option value="1">2000-5000</option>
+            <option value="2">5000-10000</option>
+            <option value="3">10000-30000</option>
+            <option value="4">30000-200000</option>
           </select>
           <select onChange={(e) => setDistrict(e.target.value)}>
             <option disabled>Select Place</option>
@@ -86,7 +86,7 @@ const PopularProperties = () => {
             <option value="2">kathmandu</option>
             <option value="3">birjung</option>
             <option value="4">lalitpur</option>
-            <option value="5">bhaktpur</option>
+            <option value="5">bhaktapur</option>
           </select>
           <AiOutlineSearch className="searchIcon" onClick={handleSearch} />
         </div>

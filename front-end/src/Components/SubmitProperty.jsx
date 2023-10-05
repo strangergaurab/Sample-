@@ -7,17 +7,22 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { logout } from "../redux/authSlice";
+import {logout} from '../redux/authSlice.js';
 import { request } from "../utils/fetchAPI";
 import { AiOutlineClose, AiOutlineFileImage } from "react-icons/ai";
-const SubmitProperty = () => {
-  const { token } = useSelector((state) => state.auth);
-  const [showForm, setShowForm] = useState(false);
-  const [state, setState] = useState({});
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-  const [photo, setPhoto] = useState("");
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+const SubmitProperty = () => {
+  const [state, setState] = useState({})
+  const [photo, setPhoto] = useState(null)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [showForm, setShowForm] = useState(false)
+  const [error, setError] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+  const { user, token } = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  
 
   const handleLogout = () => {
     dispatch(logout());
@@ -76,6 +81,21 @@ const SubmitProperty = () => {
           <li className={classes.listItems}>Contacts</li> */}
         </ul>
          {/* <span>{user.user_name}</span> */}
+         <div className={classes.right}>
+                {!user ?
+                  <>
+                    {/* <Link to='/signup'>Sign up</Link>
+                    <Link to='/signin'>Sign in</Link> */}
+                  </>
+                  :
+                  <>
+                    <span>Hello {user.username}!</span>
+                    <span className={classes.logoutBtn} onClick={handleLogout}>Logout</span>
+                    <Link onClick={() => setShowForm(true)} className={classes.list}>List your property</Link>
+                  </>
+                }
+              </div>
+
         <div className={classes.right}>
           <span onClick={handleLogout} className={classes.logoutBtn}>
             Lotout
@@ -169,6 +189,9 @@ const SubmitProperty = () => {
           </div>
         </div>
       )}
+
+
+
     </div>
   );
 };

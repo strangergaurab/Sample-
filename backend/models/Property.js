@@ -9,7 +9,7 @@ const PropertySchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        min: 6,
+        min: 15,
     },
     type: {
         type: String,
@@ -19,7 +19,7 @@ const PropertySchema = new mongoose.Schema({
     desc: {
         type: String,
         required: true,
-        min: 50,
+        min: 150,
     },
     img: {
         type: String,
@@ -45,7 +45,7 @@ const PropertySchema = new mongoose.Schema({
     },
     featured: {
         type:Boolean,
-        default: false,
+        default: true,
     }
 }, {timestamps: true})
 

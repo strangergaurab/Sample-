@@ -89,6 +89,7 @@ class ContactForm extends React.Component {
                               className="form-control"
                               placeholder="Your Name*"
                               required
+                              id="gaurab"
                             />
                           </div>
                           <div className="form-group col-lg-6">
@@ -98,6 +99,7 @@ class ContactForm extends React.Component {
                               value={this.state.email}
                               onChange={this.handleChange}
                               className="form-control"
+                              id="bhagawati"
                               placeholder="Email Address*"
                               required
                             />
@@ -105,7 +107,7 @@ class ContactForm extends React.Component {
                         </div>
                         <div className="form-group col-lg-6">
                           <input
-                            type="number"
+                            type="phone"
                             name="phone"
                             value={this.state.phone}
                             onChange={this.handleChange}
@@ -122,8 +124,10 @@ class ContactForm extends React.Component {
                             onChange={this.handleChange}
                             className="form-control"
                             placeholder="Subject"
+                            id="bhagawati"
                           />
                         </div>
+                        <br/><br/><br/>
                         <div className="col-lg-12">
                           <div className="form-group">
                             <textarea
@@ -136,6 +140,7 @@ class ContactForm extends React.Component {
                             ></textarea>
                           </div>
                         </div>
+                         <br/> <br/> <br/> <br/><br/> <br/>
                         <div className="col-lg-12">
                           <div className="form-group">
                             <button
@@ -159,7 +164,7 @@ class ContactForm extends React.Component {
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5622.005486650109!2d84.4506602648366!3d27.593957424897553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996e6df17a1a61f%3A0x7e8e1da20b55d56e!2sChitwan%2042000%2C%20Nepal!5e0!3m2!1sen!2snp!4v1658568764228!5m2!1sen!2snp"
           width="100%"
-          height="400"
+          height="500"
           style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"

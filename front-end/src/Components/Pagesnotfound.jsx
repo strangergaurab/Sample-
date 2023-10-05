@@ -15,14 +15,14 @@ function Pagesnotfound() {
     };
   
     return (
-      <div class="task">
-        <img src={logo} alt="" />
+      <div className="task">
+        <img src={logo} alt="this not show" />
         <p>
           <b>404.</b>That's an error.
         </p>
         <p>The requested resources was not found.</p>
         <button className="HH">
-          <Link to="/Home" element={<Home />}>
+          <Link className="ggg" to="/Home" element={<Home />}>
             Return Home
           </Link>
         </button>

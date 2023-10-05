@@ -21,7 +21,8 @@ import PopularProperties from "./Components/popularProperties.jsx";
 import FeaturedProperties from "./Components/FeaturedProperties.jsx";
 import Newsletter from './Components/Newsletter.jsx';
 import SubmitProperty from './Components/SubmitProperty.jsx'
-import PropertyDetail from "./Components/PropertyDetail.jsx";
+import PropertyDetail from "./Components/propertyDetail.jsx";
+import EmiCalculator from './Components/EmiCalculator.jsx';
 function App() {
   return (
     <>
@@ -32,12 +33,30 @@ function App() {
              <>
             <Nav />
             <Home />
+            <FeaturedProperties/>
+            <Footer/>
             </>
             } />
+            <Route path="/EmiCalculator" element={
+            <>
+             <Nav/>
+            <EmiCalculator/>
+            <Footer/>
+            </>
+            }
+            />
 
             {/* <Route path="/ContactForm" element={<ContactForm />} /> */}
             <Route path="/ContactForm" element={
-            <ContactForm/>}/>  
+               <>
+              <Nav/ >
+            <ContactForm/>
+            <Footer/>
+            </>
+          }
+            
+            />  
+
              <Route path="/Search" element={
               <>
               <Nav />
@@ -48,6 +67,7 @@ function App() {
                   <Footer/>
               </>
              } />
+
             <Route path="/Explore" element={
             <>
             <Nav />
@@ -96,7 +116,7 @@ function App() {
             <PropertyDetail />
             <Footer />
           </>
-        } />      
+        } />   
           </Routes>
         </BrowserRouter>
       </div>

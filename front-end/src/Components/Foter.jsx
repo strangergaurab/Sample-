@@ -115,35 +115,17 @@ function Foter() {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="containerrrr">
         <div className="copyright">
           <div className="row">
             <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy;{" "}
-              <a className="border-bottom" href="https://freewebsitecode.com">
                 <img src={logo} className="happy" alt="Free Website Code" />
-              </a>
-              , All Right Reserved. Designed By{" "}
-              <a className="border-bottom" href="https://freewebsitecode.com">
-                Free Website Code
-              </a>
+              <p style={{textAlign: 'center',margin:'0px'}}> All Right Reserved. Designed By  <a className="border-bottom" href="guarabstha.com.np">
+                Real StateWebsites
+              </a> </p>
+             
             </div>
-            <div className="col-md-6 text-center text-md-end">
-              <div className="footer-menu">
-                <button className="btn btn-link" onClick={() => {/* handle Home click */}}>
-                  Home
-                </button>
-                <button className="btn btn-link" onClick={() => {/* handle Cookies click */}}>
-                  Cookies
-                </button>
-                <button className="btn btn-link" onClick={() => {/* handle Help click */}}>
-                  Help
-                </button>
-                <button className="btn btn-link" onClick={() => {/* handle FQAs click */}}>
-                  FQAs
-                </button>
-              </div>
-            </div>
+          
           </div>
         </div>
       </div>

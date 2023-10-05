@@ -13,6 +13,7 @@ propertyController.get('/getAll', async (req, res) => {
     }
 })
 
+
 // get featured
 propertyController.get('/find/featured', async (req, res) => {
     try {
@@ -43,11 +44,11 @@ propertyController.get('/find', async (req, res) => {
 // TODO FETCH TYPE OF PROPERTIES. EX: {BEACH: 34, MOUNTAIN: 23}
 propertyController.get('/find/types', async (req, res) => {
     try {
-        const beachType = await Property.countDocuments({ type: 'beach' })
-        const mountainType = await Property.countDocuments({ type: 'mountain' })
+        const beachType = await Property.countDocuments({ type: 'metropolitan' })
+        const mountainType = await Property.countDocuments({ type: 'municipality' })
         const villageType = await Property.countDocuments({ type: 'village' })
 
-        return res.status(200).json({ beach: beachType, mountain: mountainType, village: villageType })
+        return res.status(200).json({ metropolitan: beachType, municipality: mountainType, village: villageType })
     } catch (error) {
         return res.status(500).json(error)
     }
@@ -79,7 +80,7 @@ propertyController.get('/find/bookmarked-properties', verifyToken, async (req, r
 propertyController.get('/find/:id', async (req, res) => {
     try {
         const property = await Property.findById(req.params.id).populate('currentOwner', '-password')
-
+        console.log(property);
         if (!property) {
             throw new Error('No such property with that id')
         } else {

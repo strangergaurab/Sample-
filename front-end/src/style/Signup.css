@@ -7,14 +7,14 @@ body {
  }
  
  .loginbox {
-    width: 320px;
-    height: 590px;
+    width: 340px;
+    height: 630px;
     background-color: white;
     outline: black;
     border: 1px solid #C3C2C2;
     border-radius: 10px;
     color: #fff;
-    top: 53vh;
+    top: 63vh;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -36,15 +36,15 @@ body {
     margin-top: 50px;
  }
  
- .loginbox input {
+ .loginbox input[type="text"],input[type="email"],input[type="password"] {
     width: 99%;
     margin-bottom: 8px;
-    margin-left: 3%;
+    margin-left: 1%;
  }
  
- .loginbox input[type="email"],
- input[type="password"],
- input[type="text"] {
+ .loginbox input[type="text"], input[type="email"],
+ input[type="password"]
+  {
     border: 1px solid #C3C2C2;
     padding: 0px 10px 0px 10px;
     background: transparent;
@@ -246,8 +246,8 @@ body {
        width: 50vw;
    }
 }
-.error {
-   height: 70px;
+/* .error {
+   height: 40px;
    width: 250px;
    text-align: center;
    border-radius: 20px;
@@ -259,7 +259,14 @@ body {
    top: 5rem;
    right: 5rem;
    font-weight: 500;
-}
+} */
+.error-text {
+   color: red;
+   font-size: 0.8em;
+   padding:1px;
+   margin:0.1px;
+ }
+
 
 /* RESPONSIVE */
 
